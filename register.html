@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Kota Batu</title>
+    <link rel="stylesheet" href="style3.css"> <!-- Hubungkan ke file CSS -->
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right">
+        <h1>Wisata Kota Batu</h1>
+        <p>Come on, let's create a story by going on an adventure in Batu City</p>
+        <form onsubmit="event.preventDefault(); showPopup();">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit" class="button">Buat Akun</button>
+        </form>
+    </div>
+    <button class="back-btn" onclick="window.location.href='login.html';">Kembali</button>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Pop-up Box -->
+    <div id="popupBox">
+        <h3>Akun Anda Berhasil Dibuat!</h3>
+        <button onclick="goToLogin()">Tutup</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popupBox').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function goToLogin() {
+            window.location.href = 'login.html'; // Arahkan ke halaman login
+        }
+    </script>
+</body>
+</html>

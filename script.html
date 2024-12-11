@@ -1,0 +1,45 @@
+// Mengambil elemen input nama dan password
+const namaInput = document.querySelector('input[placeholder="Nama"]');
+const passwordInput = document.querySelector('input[placeholder="Password"]');
+
+// Mengambil tombol login dan ikon mata
+const loginButton = document.querySelector('.login-btn');
+const eyeIcon = document.querySelector('.fa-eye-slash');
+
+// Mengambil link "Lupa password" dan "Belum Punya Akun"
+const lupaPasswordLink = document.querySelector('a[href="register.html"]');
+
+// Event Listener untuk tombol login
+loginButton.addEventListener('click', function() {
+    const nama = namaInput.value;
+    const password = passwordInput.value;
+
+    // Validasi sederhana
+    if (nama === "" || password === "") {
+        alert('Nama dan password harus diisi!');
+    } else {
+        alert(`Selamat datang, ${nama}!`);
+    }
+});
+
+// Event Listener untuk ikon mata (ubah visibilitas password)
+eyeIcon.addEventListener('click', function() {
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    }
+});
+
+// Event Listener untuk perubahan gaya saat tombol login ditekan
+loginButton.addEventListener('mousedown', function() {
+    loginButton.style.backgroundColor = '#555';
+});
+
+loginButton.addEventListener('mouseup', function() {
+    loginButton.style.backgroundColor = '';
+});
