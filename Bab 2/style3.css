@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.left {
+    width: 50%;
+    background: url('loginbg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #3CB3B3;
+    font-size: 36px;
+    margin: 0;
+}
+
+p {
+    color: #000;
+    font-size: 16px;
+    margin: 10px 0 30px 0;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #3CB3B3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button {
+    background-color: #3CB3B3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.back-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #4db6ac;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover, .back-btn:hover {
+    background-color: #45a049;
+}
+
+/* Snackbar styles */
+.snackbar {
+    visibility: hidden; /* Hidden by default */
+    min-width: 250px; /* Minimum width */
+    margin-left: -125px; /* Center the snackbar */
+    background-color: #00fff2; /* Background color */
+    color: #000000; /* Text color */
+    text-align: center; /* Center text */
+    border-radius: 2px; /* Rounded corners */
+    padding: 16px; /* Padding */
+    position: fixed; /* Fixed position */
+    z-index: 1; /* On top of other elements */
+    left: 50%; /* Center horizontally */
+    bottom: 30px; /* 30px from the bottom */
+    font-size: 17px; /* Font size */
+    transition: visibility 0s, opacity 0.5s linear; /* Transition effects */
+    opacity: 0; /* Hidden */
+}
+
+.snackbar.show {
+    visibility: visible; /* Show snackbar */
+    opacity: 1; /* Fully visible */
+}

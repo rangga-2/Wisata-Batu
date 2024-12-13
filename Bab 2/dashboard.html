@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Wisata Kota Batu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar w-1/5 bg-green-800 min-h-screen text-white">
+            <div class="p-4 text-lg font-bold">Wisata Kota Batu</div>
+            <ul class="mt-4">
+                <li class="p-4 hover:bg-gray-700"><a href="dashboard.html">Dashboard</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="destinasi.html">Tambah Destinasi</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="list-destinasi.html">List Destinasi</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="akomodasi.html">Akomodasi</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="event.html">Event</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-4/5">
+            <!-- Header -->
+            <div class="header bg-green-500 p-4 text-white flex justify-between items-center">
+                <h1 class="text-2xl">Dashboard Admin</h1>
+                <button class="text-2xl"><i class="fas fa-bell"></i></button>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="content p-6">
+                <!-- Statistics Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <!-- Total Visitors -->
+                    <div class="bg-white p-6 rounded shadow-md flex items-center justify-between">
+                        <div>
+                            <h2 class="text-lg font-bold">Total Pengunjung</h2>
+                            <p class="text-2xl">5,230</p>
+                        </div>
+                        <div class="text-blue-500 text-3xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+
+                    <!-- Total Destinations -->
+                    <div class="bg-white p-6 rounded shadow-md flex items-center justify-between">
+                        <div>
+                            <h2 class="text-lg font-bold">Total Destinasi</h2>
+                            <p class="text-2xl">35</p>
+                        </div>
+                        <div class="text-green-500 text-3xl">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+
+                    <!-- Total Events -->
+                    <div class="bg-white p-6 rounded shadow-md flex items-center justify-between">
+                        <div>
+                            <h2 class="text-lg font-bold">Total Event</h2>
+                            <p class="text-2xl">12</p>
+                        </div>
+                        <div class="text-yellow-500 text-3xl">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visitor Chart Section -->
+                <div class="bg-white p-6 rounded shadow-md mb-6">
+                    <h2 class="text-xl font-bold mb-4">Grafik Pengunjung Bulanan</h2>
+                    <canvas id="visitorChart"></canvas>
+                </div>
+
+                <!-- Latest Updates Section -->
+                <div class="bg-white p-6 rounded shadow-md">
+                    <h2 class="text-xl font-bold mb-4">Update Terbaru</h2>
+                    <ul>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-green-500"></i> Pembukaan destinasi baru: <b>Coban Talun</b> pada 1 November 2024.
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-green-500"></i> Festival Wisata Batu akan digelar pada 20 Desember 2024.
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-green-500"></i> Upgrade fasilitas di Jatim Park 3 telah selesai.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer bg-gray-200 p-4 text-center text-sm">
+                Copyright © 2024 Wisata Kota Batu. All rights reserved.
+                <span class="float-right">Version 2.3.0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('visitorChart').getContext('2d');
+        const visitorChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Jumlah Pengunjung',
+                    data: [120, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200],
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderWidth: 1,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

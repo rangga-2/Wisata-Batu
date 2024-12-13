@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Wisata Kota Batu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar w-1/5 bg-green-800 min-h-screen text-white">
+            <div class="p-4 text-lg font-bold">Wisata Kota Batu</div>
+            <ul class="mt-4">
+                <li class="p-4 hover:bg-gray-700"><a href="dashboard.html">Dashboard</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="destinasi.html">Tambah Destinasi</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="list-destinasi.html">List Destinasi</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="akomodasi.html">Akomodasi</a></li>
+                <li class="p-4 hover:bg-gray-700"><a href="event.html">Event</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-4/5">
+            <div class="header bg-green-500 p-4 text-white">
+                <h1 class="text-2xl">Event Wisata Kota Batu</h1>
+            </div>
+
+            <div class="content p-6">
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr>
+                            <th class="py-2">No</th>
+                            <th class="py-2">Nama Event</th>
+                            <th class="py-2">Tanggal</th>
+                            <th class="py-2">Tempat</th>
+                            <th class="py-2">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 text-center">1</td>
+                            <td class="py-2 text-center">Festival Wisata Batu</td>
+                            <td class="py-2 text-center">20/12/2024</td>
+                            <td class="py-2 text-center">Alun-Alun Kota Batu</td>
+                            <td class="py-2 text-center">
+                                <button class="bg-blue-500 text-white p-2 rounded">Edit</button>
+                                <button class="bg-red-500 text-white p-2 rounded">Hapus</button>
+                            </td>
+                        </tr>
+                        <!-- Tambahkan data lainnya di sini -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
