@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Kota Batu</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right">
+        <h1>Wisata Kota Batu</h1>
+        <p>Come on, let's create a story by going on an adventure in Batu City</p>
+        <form id="accountForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit" class="button">Buat Akun</button>
+        </form>
+    </div>
+    <button class="back-btn" onclick="window.location.href='login.html';">Kembali</button>
+
+    <!-- Snackbar -->
+    <div id="snackbar" class="snackbar">Akun berhasil dibuat!</div>
+
+    <script>
+        // Access DOM elements
+        const snackbar = document.getElementById("snackbar");
+        const accountForm = document.getElementById("accountForm");
+
+        // Function to show snackbar
+        function showSnackbar(message) {
+            snackbar.textContent = message; // Set message
+            snackbar.className = "snackbar show"; // Add show class
+
+            // Hide snackbar after 3 seconds
+            setTimeout(() => {
+                snackbar.className = snackbar.className.replace("show", ""); // Remove show class
+            }, 3000);
+        }
+
+        // Event listener for form submission
+        accountForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            showSnackbar("Akun berhasil dibuat!"); // Show snackbar
+            // Add logic to save data to the server if needed
+        });
+    </script>
+</body>
+</html>
